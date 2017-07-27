@@ -23,11 +23,7 @@ class ListTableViewController: UITableViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     func loadData (completion:@escaping ( _ list: [Person]) -> ()) -> (){
         DispatchQueue.global().async {
             print("正在加载中")
@@ -61,7 +57,11 @@ class ListTableViewController: UITableViewController {
         return personList.count
     }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
